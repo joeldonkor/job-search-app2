@@ -1,18 +1,17 @@
-import React from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React from 'react';
+import { ThemeProvider } from './components/ThemeContext';
+import Navbar from './components/Navbar';
 
 function App() {
- 
-
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-       Hello world!
-      </h1>
-    </>
-  )
+    <ThemeProvider>
+      <div className="min-h-screen dark:bg-gray-900 dark:text-white">
+        <Navbar />
+        {/* Add other components here */}
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
