@@ -1,8 +1,11 @@
 
+
+
 import React from 'react';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
-import { RxDividerVertical } from "react-icons/rx";
+import { RxDividerVertical } from 'react-icons/rx';
 import { useTheme } from './ThemeContext.jsx';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -15,31 +18,31 @@ function Navbar() {
           <img src=".\src\assets\Job Finder.png" className="w-40 h-20" alt="Logo" />
           <ul className="flex items-center">
             <li>
-              <a href="#findJobs" className="hover:underline transition duration-300 dark:text-white">
+              <Link to="/" className="hover:underline transition duration-300 dark:text-white">
                 Find Jobs
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-        
+
         {/* Right Section */}
         <ul className="flex items-center space-x-6 text-black dark:text-white">
           <li>
-            <a href="#home" className="hover:underline transition duration-300">
+            <Link to="/" className="hover:underline transition duration-300">
               Browse
-            </a>
+            </Link>
           </li>
           <div className="flex items-center space-x-2">
             <li>
-              <a href="#Signin" className="hover:underline transition duration-300">
+              <Link to="/signin" className="hover:underline transition duration-300">
                 Sign In
-              </a>
+              </Link>
             </li>
             <RxDividerVertical className="text-2xl" />
             <li>
-              <a href="#Signup" className="hover:underline transition duration-300">
+              <Link to="/signup" className="hover:underline transition duration-300">
                 Sign Up
-              </a>
+              </Link>
             </li>
           </div>
           <button
