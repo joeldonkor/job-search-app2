@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import { useDebounce } from 'use-debounce'; // Install this library for debouncing
+import { MdLocationOn } from "react-icons/md";
+import { useDebounce } from 'use-debounce'; 
 
 function JobSearch({ onSearchChange }) {
   const [search, setSearch] = useState('Web Developer');
@@ -14,23 +15,24 @@ function JobSearch({ onSearchChange }) {
   }, [debouncedSearch, debouncedLocation, onSearchChange]);
 
   return (
-    <div className="flex items-center space-x-4 p-4 rounded-lg shadow-md">
-      <div className="flex items-center p-2 rounded-lg">
+    <div className="flex items-center space-x-4 p-4   ">
+      <div className="flex items-center p-2  mr-3 bg-white border border-white dark:bg-gray-800 dark:border-gray-800">
         <CiSearch className="text-2xl" />
         <input
           type="search"
           placeholder="Job title or keyword"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-60 px-4 py-2 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-60 px-4 py-2  focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
         />
       </div>
 
-      <div className="flex items-center space-x-4 p-2 rounded-lg">
+      <div className="flex items-center space-x-4 p-2  bg-white border border-white dark:bg-gray-800 dark:border-gray-800">
+        <MdLocationOn />
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="w-60 px-4 py-2 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-60 px-4 py-2  focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option>United States</option>
           <option>Accra</option>
@@ -40,7 +42,7 @@ function JobSearch({ onSearchChange }) {
         </select>
 
         <button
-          className="w-32 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="w-32 bg-[#FE753F] text-white px-4 py-2 rounded-md hover:bg-orange-500"
         >
           Search
         </button>
